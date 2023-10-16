@@ -1,0 +1,30 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>File Download Example</title>
+</head>
+<body>
+<h1>File Download Example</h1>
+<p>Enter the filename and click the download button:</p>
+<input type="text" id="filename" placeholder="Enter filename">
+<button id="downloadButton">Download File</button>
+
+<p>Click <a th:href="@{/home}">here</a> to go back to home.</p>
+
+<script>
+    document.getElementById('downloadButton').addEventListener('click', function() {
+        // Get the filename from the input field
+        var filename = document.getElementById('filename').value;
+
+        if (filename) {
+            // Construct the download URL with the filename
+            var downloadUrl = '/download/' + filename;
+
+            // Trigger the download by setting the window location
+            window.location.href = downloadUrl;
+        } else {
+            alert('Please enter a filename.');
+        }
+    });
+</script>
+</body>
+</html>
