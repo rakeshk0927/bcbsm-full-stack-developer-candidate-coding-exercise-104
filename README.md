@@ -15,3 +15,4 @@
     Springboot  
     Angular  
     MongoDB
+@Document(indexName = "#{T(java.time.LocalDate).now().format(T(java.time.format.DateTimeFormatter).ofPattern('yyyy_MM'))}")
